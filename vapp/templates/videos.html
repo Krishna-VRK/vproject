@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+
+<div class="container">
+    <div class="row">
+        {% for video in Videos %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+        <video width='320' height="240" controls>
+            <source src='{{ video.videofile.url }}' type='video/mp4'>
+        </video>
+        <div class="card-body">
+            <p class="card-text"> {{ video.name }}</p>
+        </div>
+    </div>
+    </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock start %}
